@@ -6,13 +6,13 @@ import os
 
 # Превратили папку с список
 directory = 'assets'
-
+photos = os.listdir(directory)
 
 def apply_filter(photos_list):
     for image_path in photos:
-        img = Image.open(image_path)
+        img = Image.open(f"assets/{image_path}")
         img = img.filter(ImageFilter.EDGE_ENHANCE)
-        output_path = f"processed_{image_path}"
+        output_path = f"apply_filter_{image_path}"
         img.save(output_path)
         return output_path
 

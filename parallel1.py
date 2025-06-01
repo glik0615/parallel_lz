@@ -1,4 +1,3 @@
-
 # Импортируем необходимые для работы библиотеки
 from PIL import Image, ImageFilter
 import threading
@@ -12,14 +11,14 @@ photos = os.listdir(directory)
 
 def process_image(photos):
     for path in photos:
-        img = Image.open(path)
+        img = Image.open(f"assets/{path}")
         img = img.filter(ImageFilter.GaussianBlur(4))
-        img.save(f"processed_{path}")
-        print(f"Processed{path}")
+        img.save(f"assets/{path}")
+        print(f"assets/{path}")
 
  #Обычная запись 
     start = time.time()
-    for i in range (10):
+    for i in range (4):
         process_image(f"Фото №{i}")
     delta = time.time() - start
     print(f"Время для работы с фото{i+1}:{delta}")
@@ -27,7 +26,7 @@ def process_image(photos):
 # Многопоточная запись
 start = time.time()
 threads = []
-for i in range(10):
+for i in range(4):
     t = threading.Thread(target=process_image, args=(f"{i}.jpg"))
     t.start()
     threads.append(t)

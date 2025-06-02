@@ -5,6 +5,6 @@ async def message():
         await asyncio.sleep(1)
 async def main():
     await message()
-
-asyncio.run(main())
-asyncio.run(message())
+    asyncio.run(message())
+    if __name__ == "__main__":
+        main()

@@ -36,6 +36,7 @@ class Par1():
     thread_time = time.time() - start
     print(f"Многопоточная запись: {thread_time:.2f} сек")
 
+def main():
     if __name__ == "__main__":
         main()
 

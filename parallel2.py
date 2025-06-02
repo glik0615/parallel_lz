@@ -1,7 +1,6 @@
 from PIL import Image, ImageFilter
 import multiprocessing
 import time
-import math
 import os
 
 # Превратили папку с список
